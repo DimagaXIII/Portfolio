@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
-// import logo from '../Assets/logo.png';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+
 import { CgGitFork } from 'react-icons/cg';
 import {
 	AiFillStar,
@@ -12,17 +12,26 @@ import {
 	AiOutlineFundProjectionScreen,
 	AiOutlineUser,
 } from 'react-icons/ai';
-
 import { CgFileDocument } from 'react-icons/cg';
 import { MdLanguage } from 'react-icons/md';
 
+import { useTranslation } from 'react-i18next';
+
 const NavBar = () => {
 	const [expand, updateExpanded] = useState(false);
-	const [navColour, updateNavbar] = useState(false);
-	const [language, setLanguage] = useState(true);
+	const [navColour, updateNavbar] = useState(window.innerWidth <= 765);
+	const [toggleLanguage, setToggleLanguage] = useState(true);
+
+	const { t, i18n } = useTranslation();
+
+	useEffect(() => {
+		i18n.changeLanguage(toggleLanguage ? 'en' : 'ru');
+	}, [toggleLanguage, i18n]);
 
 	function scrollHandler() {
-		if (window.scrollY >= 20) {
+		if (window.scrollY >= 15 && window.innerWidth > 765) {
+			updateNavbar(true);
+		} else if (window.innerWidth <= 765) {
 			updateNavbar(true);
 		} else {
 			updateNavbar(false);
@@ -39,18 +48,8 @@ const NavBar = () => {
 			className={navColour ? 'sticky' : 'navbar'}
 		>
 			<Container>
-				<Navbar.Brand href='/'>
-					<p
-						// style={{
-						// 	color: '#cd5ff8',
-						// 	fontWeight: 600,
-						// 	marginBottom: 0,
-						// 	fontSize: '30px',
-						// }}
-						className='logo'
-					>
-						LD
-					</p>
+				<Navbar.Brand as={Link} to='/'>
+					<p className='logo'>LD</p>
 				</Navbar.Brand>
 				<Navbar.Toggle
 					aria-controls='responsive-navbar-nav'
@@ -66,7 +65,8 @@ const NavBar = () => {
 					<Nav className='ml-auto' defaultActiveKey='#home'>
 						<Nav.Item>
 							<Nav.Link as={Link} to='/' onClick={() => updateExpanded(false)}>
-								<AiOutlineHome style={{ marginBottom: '2px' }} /> Home
+								<AiOutlineHome style={{ marginBottom: '2px' }} />{' '}
+								{t('menu.home')}
 							</Nav.Link>
 						</Nav.Item>
 						<Nav.Item>
@@ -75,7 +75,8 @@ const NavBar = () => {
 								to='/about'
 								onClick={() => updateExpanded(false)}
 							>
-								<AiOutlineUser style={{ marginBottom: '2px' }} /> About
+								<AiOutlineUser style={{ marginBottom: '2px' }} />{' '}
+								{t('menu.about')}
 							</Nav.Link>
 						</Nav.Item>
 						<Nav.Item>
@@ -87,7 +88,7 @@ const NavBar = () => {
 								<AiOutlineFundProjectionScreen
 									style={{ marginBottom: '2px' }}
 								/>{' '}
-								Projects
+								{t('menu.project')}
 							</Nav.Link>
 						</Nav.Item>
 
@@ -97,7 +98,8 @@ const NavBar = () => {
 								to='/resume'
 								onClick={() => updateExpanded(false)}
 							>
-								<CgFileDocument style={{ marginBottom: '2px' }} /> Resume
+								<CgFileDocument style={{ marginBottom: '2px' }} />{' '}
+								{t('menu.resume')}
 							</Nav.Link>
 						</Nav.Item>
 
@@ -107,17 +109,18 @@ const NavBar = () => {
 								// to='/resume'
 								// onClick={() => updateExpanded(false)}
 								onClick={() => {
-									setLanguage(!language);
+									setToggleLanguage(!toggleLanguage);
+									updateExpanded(expand ? false : 'expanded');
 								}}
 							>
 								<MdLanguage style={{ marginBottom: '2px' }} />
-								{language ? 'EN' : 'RU'}
+								{toggleLanguage ? 'EN' : 'RU'}
 							</Nav.Link>
 						</Nav.Item>
 
 						<Nav.Item className='fork-btn'>
 							<Button
-								href='https://github.com/soumyajit4419/Portfolio'
+								href='https://github.com/DimagaXIII'
 								target='_blank'
 								className='fork-btn-inner'
 							>

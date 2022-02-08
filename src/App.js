@@ -13,13 +13,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import ScrollToTop from './components/ScrollToTop';
 
-function App() {
+const App = () => {
 	const [load, upadateLoad] = useState(true);
 
 	useEffect(() => {
-		setTimeout(() => {
+		const timer = setTimeout(() => {
 			upadateLoad(false);
 		}, 300);
+
+		return () => clearTimeout(timer);
 	}, []);
 
 	return (
@@ -38,6 +40,6 @@ function App() {
 			</div>
 		</Router>
 	);
-}
+};
 
 export default App;

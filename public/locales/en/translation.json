@@ -1,0 +1,25 @@
+{
+	"title": "Internationalizing with i18next",
+	"menu": {
+		"home": "Home",
+		"about": "About",
+		"project": "Project",
+		"resume": "Resume"
+	},
+	"hello": {
+		"hi": "Hi There!",
+		"i": "I'M",
+		"name": "Dmitriy Lobodin"
+	},
+	"type": {
+		"one": "Front-End Web Developer.",
+		"two": "Teacher.",
+		"three": "Mentor.",
+		"four": "Implementer."
+	},
+	"introduce": {
+		"one": "LET ME",
+		"two": "INTRODUCE",
+		"three": "MYSELF"
+	}
+}

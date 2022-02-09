@@ -20,15 +20,16 @@ import { useTranslation } from 'react-i18next';
 const NavBar = () => {
 	const [expand, updateExpanded] = useState(false);
 	const [navColour, updateNavbar] = useState(window.innerWidth <= 765);
-	const [toggleLanguage, setToggleLanguage] = useState(true);
+	const [toggleLanguage, setToggleLanguage] = useState(localStorage.i18nextLng);
 
 	const { t, i18n } = useTranslation();
 
-	useEffect(() => {
-		i18n.changeLanguage(toggleLanguage ? 'en' : 'ru');
-	}, [toggleLanguage, i18n]);
+	const handleToggleLang = (lang) => {
+		i18n.changeLanguage(lang);
+		localStorage.setItem('lang', lang);
+	};
 
-	function scrollHandler() {
+	const scrollHandler = () => {
 		if (window.scrollY >= 15 && window.innerWidth > 765) {
 			updateNavbar(true);
 		} else if (window.innerWidth <= 765) {
@@ -36,7 +37,7 @@ const NavBar = () => {
 		} else {
 			updateNavbar(false);
 		}
-	}
+	};
 
 	window.addEventListener('scroll', scrollHandler);
 
@@ -110,17 +111,18 @@ const NavBar = () => {
 								// onClick={() => updateExpanded(false)}
 								onClick={() => {
 									setToggleLanguage(!toggleLanguage);
+									handleToggleLang(toggleLanguage === 'en' ? 'ru' : 'en');
 									updateExpanded(expand ? false : 'expanded');
 								}}
 							>
 								<MdLanguage style={{ marginBottom: '2px' }} />
-								{toggleLanguage ? 'EN' : 'RU'}
+								{toggleLanguage === 'en' ? 'RU' : 'EN'}
 							</Nav.Link>
 						</Nav.Item>
 
 						<Nav.Item className='fork-btn'>
 							<Button
-								href='https://github.com/DimagaXIII'
+								href='https://github.com/DimagaDev'
 								target='_blank'
 								className='fork-btn-inner'
 							>

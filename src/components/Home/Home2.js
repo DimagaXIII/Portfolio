@@ -62,7 +62,7 @@ function Home2() {
 						<ul className='home-about-social-links'>
 							<li className='social-icons'>
 								<a
-									href='https://github.com/soumyajit4419'
+									href='https://github.com/DimagaDev'
 									target='_blank'
 									rel='noreferrer'
 									className='icon-colour  home-social-icons'
@@ -72,7 +72,7 @@ function Home2() {
 							</li>
 							<li className='social-icons'>
 								<a
-									href='https://www.linkedin.com/in/soumyajit4419/'
+									href='https://www.linkedin.com/in/%D0%B4%D0%B8%D0%BC%D0%B0-%D0%BB%D0%BE%D0%B1%D0%BE%D0%B4%D0%B8%D0%BD-2b341b231/'
 									target='_blank'
 									rel='noreferrer'
 									className='icon-colour  home-social-icons'
@@ -82,7 +82,7 @@ function Home2() {
 							</li>
 							<li className='social-icons'>
 								<a
-									href='https://www.instagram.com/s.o.u.m.y.a_j.i.t/'
+									href='https://www.instagram.com/lobodin_dimaga/'
 									target='_blank'
 									rel='noreferrer'
 									className='icon-colour home-social-icons'

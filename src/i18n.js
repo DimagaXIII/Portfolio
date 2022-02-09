@@ -4,20 +4,18 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
 i18n
-	// Enables the i18next backend
 	.use(Backend)
-	// Enable automatic language detection
 	.use(LanguageDetector)
-	// Enables the hook initialization module
 	.use(initReactI18next)
 	.init({
-		fallbackLng: 'en',
+		lng: localStorage.getItem('lang') || 'en',
+		// fallbackLng: localStorage.getItem('lang'),
 		debug: true,
-		//Detects and caches a cookie from the language provided
-		detection: {
-			order: ['queryString', 'cookie'],
-			cache: ['cookie'],
-		},
+		// detection: {
+		// 	order: ['queryString', 'cookie'],
+		// 	cache: ['cookie'],
+		// },
+		// keySeparator: false,
 		interpolation: {
 			escapeValue: false,
 		},

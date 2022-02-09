@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import homeLogo from '../../Assets/home.png';
 import Particle from '../Particle';
@@ -8,6 +8,11 @@ import { useTranslation } from 'react-i18next';
 
 function Home() {
 	const { t } = useTranslation();
+
+	useEffect(() => {
+		localStorage.setItem('page', 'home');
+	}, []);
+
 	return (
 		<section>
 			<Container fluid className='home-section' id='home'>

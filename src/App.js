@@ -20,7 +20,6 @@ const App = () => {
 		const timer = setTimeout(() => {
 			upadateLoad(false);
 		}, 300);
-
 		return () => clearTimeout(timer);
 	}, []);
 

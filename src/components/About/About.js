@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Particle from '../Particle';
-import Github from './Github';
+// import Github from './Github';
 import Techstack from './Techstack';
+import NoTechstack from './NoTechStack';
 import Aboutcard from './AboutCard';
 import laptopImg from '../../Assets/about.png';
 import Toolstack from './Toolstack';
@@ -32,7 +33,7 @@ function About() {
 					</Col>
 					<Col
 						md={5}
-						style={{ paddingTop: '120px', paddingBottom: '50px' }}
+						style={{ paddingTop: '30px', paddingBottom: '35px' }}
 						className='about-img'
 					>
 						<img src={laptopImg} alt='about' className='img-fluid' />
@@ -41,15 +42,16 @@ function About() {
 				<h1 className='project-heading'>
 					Professional <strong className='purple'>Skillset </strong>
 				</h1>
-
 				<Techstack />
-
+				<h1 className='project-heading'>
+					No Professional <strong className='purple'>Skillset </strong>
+				</h1>
+				<NoTechstack />
 				<h1 className='project-heading'>
 					<strong className='purple'>Tools</strong> I use
 				</h1>
 				<Toolstack />
-
-				<Github />
+				{/* <Github /> вернуть потом! */}
 			</Container>
 		</Container>
 	);

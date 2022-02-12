@@ -2,7 +2,8 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 // import myImg from '../../Assets/avatar.svg';
 import myImg from '../../Assets/MonAmour.png';
-import { AiFillGithub, AiFillInstagram } from 'react-icons/ai';
+import { AiFillGithub, AiFillPhone } from 'react-icons/ai';
+import { RiMailSendLine } from 'react-icons/ri';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
@@ -82,12 +83,20 @@ function Home2() {
 							</li>
 							<li className='social-icons'>
 								<a
-									href='https://www.instagram.com/lobodin_dimaga/'
-									target='_blank'
+									href='mailto:lobodindimaga@gmai.com'
 									rel='noreferrer'
 									className='icon-colour home-social-icons'
 								>
-									<AiFillInstagram />
+									<RiMailSendLine />
+								</a>
+							</li>
+							<li className='social-icons'>
+								<a
+									href='tel:380974343441'
+									rel='noreferrer'
+									className='icon-colour home-social-icons'
+								>
+									<AiFillPhone />
 								</a>
 							</li>
 						</ul>

@@ -9,13 +9,7 @@ i18n
 	.use(initReactI18next)
 	.init({
 		lng: localStorage.getItem('lang') || 'en',
-		// fallbackLng: localStorage.getItem('lang'),
 		debug: true,
-		// detection: {
-		// 	order: ['queryString', 'cookie'],
-		// 	cache: ['cookie'],
-		// },
-		// keySeparator: false,
 		interpolation: {
 			escapeValue: false,
 		},

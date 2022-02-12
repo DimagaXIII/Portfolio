@@ -251,6 +251,7 @@ html {
 	height: 100%;
 	left: 0;
 	top: 0;
+	z-index: -1;
 }
 
 .home-header {
@@ -507,8 +508,14 @@ html {
 
 .card-img-top {
 	padding: 20px !important;
-	opacity: 0.8 !important;
+	/* opacity: 0.8 !important; */
 	border-radius: 10px !important;
+}
+
+@media (max-width: 767px) {
+	.card-img-top {
+		height: 44%;
+	}
 }
 
 .blog-img {
@@ -519,14 +526,14 @@ html {
 
 .btn-primary {
 	color: #fff !important;
-	background-color: #623686 !important;
-	border-color: #623686 !important;
+	background-color: #29a023 !important;
+	border-color: #29a023 !important;
 }
 
 .btn-primary:hover {
 	color: #fff !important;
-	background-color: #6d20c5d7 !important;
-	border-color: #6d20c5d7 !important;
+	background-color: #73f66c !important;
+	border-color: #73f66c !important;
 }
 .btn:focus {
 	outline: none !important;
@@ -556,12 +563,12 @@ html {
 	margin: 15px !important;
 	padding: 10px !important;
 	opacity: 0.93 !important;
-	border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
+	border: 1.7px solid rgba(137, 230, 142, 0.637) !important;
 	vertical-align: middle !important;
 	text-align: center !important;
 	border-radius: 5px !important;
 	display: table !important;
-	box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
+	box-shadow: 4px 5px 4px 3px rgba(4, 168, 31, 0.137) !important;
 	overflow: hidden !important;
 	transition: all 0.4s ease 0s !important;
 }
@@ -573,9 +580,7 @@ html {
 }
 
 .tech-icons:hover {
-	transform: scale(1.05) !important;
-	overflow: hidden !important;
-	border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
+	box-shadow: 3px 4px 3px 2px rgba(119, 230, 115, 0.883) !important;
 }
 .tech-icon-images {
 	padding: 20px !important;
@@ -644,14 +649,14 @@ html {
 .resume .resume-item {
 	padding: 0 0 10px 25px;
 	margin-top: -2px;
-	border-left: 2px solid #8a49a8;
+	border-left: 2px solid #73f66c71;
 	position: relative;
 }
 
 .resume .resume-item .resume-title {
 	line-height: 18px;
 	font-size: 0.9em;
-	background: #5234795d;
+	background: #73f66c71;
 	padding: 8px 15px;
 	display: inline-block;
 	font-weight: 600;
@@ -681,7 +686,7 @@ html {
 	left: -9px;
 	top: 0;
 	background: #fff;
-	border: 2px solid #8a49a8;
+	border: 2px solid #51b34c;
 }
 
 .like-item {

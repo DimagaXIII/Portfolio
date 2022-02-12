@@ -1,33 +1,31 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import {
-	DiJavascript1,
-	DiReact,
-	DiNodejs,
-	DiMongodb,
-	DiGit,
-} from 'react-icons/di';
+import { CgCPlusPlus } from 'react-icons/cg';
+import { DiPython } from 'react-icons/di';
+import { SiPytorch, SiTensorflow, SiFirebase } from 'react-icons/si';
 
-function Techstack() {
+function NoTechstack() {
 	return (
 		<Row style={{ justifyContent: 'center', paddingBottom: '50px' }}>
 			<Col xs={4} md={2} className='tech-icons'>
-				<DiJavascript1 />
+				<CgCPlusPlus />
+			</Col>
+
+			<Col xs={4} md={2} className='tech-icons'>
+				<DiPython />
 			</Col>
 			<Col xs={4} md={2} className='tech-icons'>
-				<DiReact />
+				<SiPytorch />
 			</Col>
 			<Col xs={4} md={2} className='tech-icons'>
-				<DiNodejs />
+				<SiTensorflow />
 			</Col>
+
 			<Col xs={4} md={2} className='tech-icons'>
-				<DiGit />
-			</Col>
-			<Col xs={4} md={2} className='tech-icons'>
-				<DiMongodb />
+				<SiFirebase />
 			</Col>
 		</Row>
 	);
 }
 
-export default Techstack;
+export default NoTechstack;
